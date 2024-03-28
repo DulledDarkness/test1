@@ -1,3 +1,5 @@
+-- @_x4yz
+
 if _G["inputthing"] then
     _G["inputthing"]:Disconnect()
 end
@@ -463,7 +465,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                         [1] = true,
                         [2] = 0.5,
                         [3] = {
-                            [1] = 5829320333
+                            [1] = 13369663140
                         },
                         [4] = Color3.new(1, 0, 0),
                         [5] = 3,
@@ -475,7 +477,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     [1] = true,
                     [2] = 0.5,
                     [3] = {
-                        [1] = 5829320333
+                        [1] = 13369663140
                     },
                     [4] = true,
                     [5] = 3,
@@ -486,7 +488,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     [2] = 1000000000,
                     [3] = true,
                     [4] = {
-                        [1] = 1846315693
+                        [1] = 1840297374
                     },
                     [5] = 1,
                     [6] = 1.5,
@@ -497,7 +499,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     [11] = true,
                     [12] = 500,
                     [13] = {
-                        [1] = 5829320333
+                        [1] = 13369663140
                     },
                     [14] = true,
                     [15] = 10000000,
@@ -526,11 +528,11 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                 [11] = {
                     [1] = true,
                     [2] = {
-                        [1] = 1846315693,
-                        [2] = 1846315693,
-                        [3] = 1846315693,
-                        [4] = 1846315693,
-                        [5] = 1846315693
+                        [1] = 1840297374,
+                        [2] = 1840297374,
+                        [3] = 1840297374,
+                        [4] = 1840297374,
+                        [5] = 1840297374
                     },
                     [3] = 1,
                     [4] = 1,
@@ -550,7 +552,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     ["MaxDistance"] = 100000000000,
                     ["Volume"] = 1000,
                     ["Silenced"] = false,
-                    ["SoundId"] = "rbxassetid://1846315693",
+                    ["SoundId"] = "rbxassetid://1840297374",
                     ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
                     ["Echo"] = true,
                     ["EmitterSize"] = 700000
@@ -561,14 +563,39 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     ["CurrentAmmo"] = 19,
                     ["AmmoPerMag"] = 20,
                     ["Volume"] = 1000,
-                    ["SoundId"] = "rbxassetid://1846315693",
+                    ["SoundId"] = "rbxassetid://1840297374",
+                    ["MaxDistance"] = 100000000000,
+                    ["Enabled"] = true,
+                    ["EmitterSize"] = 700000 
+                }
+            }
+            local args2_1 = {
+                [1] = {
+                    ["Pitch"] = 1,
+                    ["MaxDistance"] = 100000000000,
+                    ["Volume"] = 1000,
+                    ["Silenced"] = false,
+                    ["SoundId"] = "rbxassetid://6314881739",
+                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["Echo"] = true,
+                    ["EmitterSize"] = 700000
+                },
+                [2] = {
+                    ["Pitch"] = 1,
+                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["CurrentAmmo"] = 19,
+                    ["AmmoPerMag"] = 20,
+                    ["Volume"] = 1000,
+                    ["SoundId"] = "rbxassetid://6314881739",
                     ["MaxDistance"] = 100000000000,
                     ["Enabled"] = true,
                     ["EmitterSize"] = 700000 
                 }
             }
             coroutine.resume(coroutine.create(function() 
-                game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2))  
+                game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2_1))
+                task.wait(2)
+                game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2))
             end)) 
         end 
         for Loop = 1, 10 do 
