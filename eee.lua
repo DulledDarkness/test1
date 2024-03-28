@@ -4,6 +4,7 @@ end
 
 _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(function(Key, Process)
     if Key.KeyCode == Enum.KeyCode.Q and not Process then
+        print("click")
         local function Shoot()
             local args = {
                 [1] = {
@@ -539,8 +540,9 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
             }
             args[6][2] = args[1].HitSoundIDs
             args[7][2] = args[1].HitCharSndIDs
+            print("readying")
             game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("VisualizeBullet"):FireServer(unpack(args))
-print("e")
+            print("fired")
 
             local args2 = {
                 [1] = {
@@ -572,6 +574,7 @@ print("e")
         for Loop = 1, 10 do 
             coroutine.resume(coroutine.create(function() 
                 Shoot() 
+                print("func shoot")
             end)) 
         end 
     end 
