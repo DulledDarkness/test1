@@ -1,10 +1,14 @@
 -- @_x4yz
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local UserInput = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 if _G["inputthing"] then
     _G["inputthing"]:Disconnect()
 end
 
-_G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(function(Key, Process)
+_G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
     if Key.KeyCode == Enum.KeyCode.Q and not Process then
         print("click")
         local function Shoot()
@@ -439,19 +443,19 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     ["CrossSize"] = 9,
                     ["SwitchTime"] = 0.25
                 },
-                [2] = game:GetService("Players").LocalPlayer.Character.pistols,
-                [3] = game:GetService("Players").LocalPlayer.Character.pistols.Handle,
+                [2] = Player.Character.pistols,
+                [3] = Player.Character.pistols.Handle,
                 [4] = {
                     [1] = workspace.CurrentCamera.CFrame.LookVector
                 },
-                [5] = game:GetService("Players").LocalPlayer.Character.Head.HatAttachment,
+                [5] = Player.Character.Head.HatAttachment,
                 [6] = {
                     [1] = true,
                     [2] = {} --[[DUPLICATE]],
                     [3] = 5.005000500050005e+35,
                     [4] = 5.005000500050005e+35,
                     [5] = 5.005000500050005e+35,
-                    [6] = game:GetService("ReplicatedStorage"):WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [6] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
                     [7] = true
                 },
                 [7] = {
@@ -460,7 +464,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     [3] = 5000,
                     [4] = Color3.new(0, 0, 0),
                     [5] = 5000,
-                    [6] = game:GetService("ReplicatedStorage"):WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [6] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
                     [7] = {
                         [1] = true,
                         [2] = 0.5,
@@ -494,7 +498,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     [6] = 1.5,
                     [7] = 1,
                     [8] = true,
-                    [9] = game:GetService("ReplicatedStorage"):WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [9] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
                     [10] = true,
                     [11] = true,
                     [12] = 500,
@@ -543,7 +547,7 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
             args[6][2] = args[1].HitSoundIDs
             args[7][2] = args[1].HitCharSndIDs
             print("readying")
-            game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("VisualizeBullet"):FireServer(unpack(args))
+            ReplicatedStorage:WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("VisualizeBullet"):FireServer(unpack(args))
             print("fired")
 
             local args2 = {
@@ -553,13 +557,13 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     ["Volume"] = 1000,
                     ["Silenced"] = false,
                     ["SoundId"] = "rbxassetid://1840297374",
-                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["Origin"] = Player:GetMouse().Target,
                     ["Echo"] = true,
                     ["EmitterSize"] = 700000
                 },
                 [2] = {
                     ["Pitch"] = 1,
-                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["Origin"] = Player:GetMouse().Target,
                     ["CurrentAmmo"] = 19,
                     ["AmmoPerMag"] = 20,
                     ["Volume"] = 1000,
@@ -576,13 +580,13 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                     ["Volume"] = 1000,
                     ["Silenced"] = false,
                     ["SoundId"] = "rbxassetid://6314881739",
-                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["Origin"] = Player:GetMouse().Target,
                     ["Echo"] = true,
                     ["EmitterSize"] = 700000
                 },
                 [2] = {
                     ["Pitch"] = 1,
-                    ["Origin"] = game.Players.LocalPlayer:GetMouse().Target,
+                    ["Origin"] = Player:GetMouse().Target,
                     ["CurrentAmmo"] = 19,
                     ["AmmoPerMag"] = 20,
                     ["Volume"] = 1000,
@@ -593,9 +597,9 @@ _G["inputthing"] = game:GetService("UserInputService").InputBegan:Connect(functi
                 }
             }
             coroutine.resume(coroutine.create(function() 
-                game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2_1))
+                ReplicatedStorage:WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2_1))
                 task.wait(2)
-                game:GetService("ReplicatedStorage"):WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2))
+                ReplicatedStorage:WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("PlayAudio"):FireServer(unpack(args2))
             end)) 
         end 
         for Loop = 1, 10 do 
