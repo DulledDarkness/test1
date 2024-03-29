@@ -1,7 +1,10 @@
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 
-local Character = Player.Character or Player.CharacterAdded:Wait()
+local TestPName = "some_mobile"
+local TestP:Player = Players:FindFirstChild(TestPName)
+
+local Character = TestP.Character or TestP.CharacterAdded:Wait() or Player.Character or Player.CharacterAdded:Wait()
 local Tool = Character:FindFirstChildWhichIsA("Tool")
 
 if Tool ~= nil then
