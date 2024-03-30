@@ -469,7 +469,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                         [1] = true,
                         [2] = 0.5,
                         [3] = {
-                            [1] = 13369663140
+                            [1] = 13270673251
                         },
                         [4] = Color3.new(1, 0, 0),
                         [5] = 3,
@@ -481,7 +481,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [1] = true,
                     [2] = 0.5,
                     [3] = {
-                        [1] = 13369663140
+                        [1] = 13270673251
                     },
                     [4] = true,
                     [5] = 3,
@@ -503,7 +503,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [11] = true,
                     [12] = 500,
                     [13] = {
-                        [1] = 13369663140
+                        [1] = 13270673251
                     },
                     [14] = true,
                     [15] = 10000000,
