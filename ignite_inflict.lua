@@ -1,3 +1,5 @@
+-- @_x4yz
+
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 
@@ -19,13 +21,18 @@ for i, v in pairs(Players:GetChildren()) do
 					local THumanoid = Char:FindFirstChildWhichIsA("Humanoid")
 					local TTorso = Char.Torso or Char:WaitForChild("Torso")
 					
-					local A1 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
-					local A2_1 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, RequiredModule.MeleeAffliction, RequiredModule.MeleeAfflictionName, RequiredModule.MeleeAfflictChance}
+					local A1_1 = {RequiredModule.MeleeDamage, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier} -- Original
+					local A1_2 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
+
+					local A2_1 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, RequiredModule.MeleeAffliction, RequiredModule.MeleeAfflictionName, RequiredModule.MeleeAfflictChance} -- Original
 					local A2_2 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, true, "IgniteScript", 100}
-					local A3 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier}
+
+					local A3_1 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier} -- Original
+					local A3_2 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier}
+
 					local Hit = TTorso
 
-					InflictMelee:InvokeServer(RequiredModule, THumanoid, TTorso, A1, A2_2, A3, Hit)
+					InflictMelee:InvokeServer(RequiredModule, THumanoid, TTorso, A1_2, A2_2, A3_2, Hit)
 					print("Fired on player: "..tostring(v.Name))
 				end
 			end
