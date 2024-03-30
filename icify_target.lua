@@ -8,7 +8,7 @@ local Character = Player.Character or Player.CharacterAdded:Wait()
 local function IcifyTarget(Target:Player)
 	if Target ~= nil and typeof(Target) == "Instance" and Target:IsA("Player") and Target.Name ~= tostring(Player.Name) and Target.Character and Player.Character then
 		local Char = Target.Character
-		local Tool = Player.Backpack:FindFirstChildWhich("pistols") or Player.Backpack:FindFirstChild("sniper") or Player.Backpack:FindFirstChild("flamethrower") or Character:FindFirstChildWhichIsA("Tool")
+		local Tool = Player.Backpack:FindFirstChild("pistols") or Player.Backpack:FindFirstChild("sniper") or Player.Backpack:FindFirstChild("flamethrower") or Character:FindFirstChildWhichIsA("Tool")
 
 		if Tool ~= nil then
 			local ModuleSetting = Tool:FindFirstChild("Setting")
