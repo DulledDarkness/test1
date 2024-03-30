@@ -19,9 +19,9 @@ for i, v in pairs(Players:GetChildren()) do
 					local THumanoid = Char:FindFirstChildWhichIsA("Humanoid")
 					local TTorso = Char.Torso or Char:WaitForChild("Torso")
 					
-					local A1 = {RequiredModule.MeleeDamage, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
+					local A1 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
 					local A2_1 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, RequiredModule.MeleeAffliction, RequiredModule.MeleeAfflictionName, RequiredModule.MeleeAfflictChance}
-					local A2_2 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, true, "IcifyScript", RequiredModule.MeleeAfflictChance}
+					local A2_2 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, true, "IcifyScript", 100}
 					local A3 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier}
 					local Hit = TTorso
 
