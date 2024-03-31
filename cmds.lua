@@ -72,7 +72,7 @@ local function IgniteTarget(Target:Player)
 					local A1_2 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
 
 					local A2_1 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, RequiredModule.MeleeAffliction, RequiredModule.MeleeAfflictionName, RequiredModule.MeleeAfflictChance} -- Original
-					local A2_2 = {20, RequiredModule.MeleeLifesteal, true, "IgniteScript", 100}
+					local A2_2 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, true, "IgniteScript", 100}
 
 					local A3_1 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier} -- Original
 					local A3_2 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier}
@@ -120,7 +120,7 @@ local function ELockTarget(Target:Player)
 						local A1_2 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
 
 						local A2_1 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, RequiredModule.MeleeAffliction, RequiredModule.MeleeAfflictionName, RequiredModule.MeleeAfflictChance} -- Original
-						local A2_2 = {20, RequiredModule.MeleeLifesteal, true, "IcifyScript", 100}
+						local A2_2 = {RequiredModule.MeleeKnockback, RequiredModule.MeleeLifesteal, true, "IcifyScript", 100}
 
 						local A3_1 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier} -- Original
 						local A3_2 = {RequiredModule.MeleeCriticalDamageEnabled, RequiredModule.MeleeCriticalBaseChance, RequiredModule.MeleeCriticalDamageMultiplier}
