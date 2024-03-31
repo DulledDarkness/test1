@@ -10,7 +10,7 @@ end
 
 _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
     if Key.KeyCode == Enum.KeyCode.Q and not Process then
-        print("click")
+        print("[!!] key clicked")
         local function Shoot()
             local args = {
                 [1] = {
@@ -546,9 +546,10 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
             }
             args[6][2] = args[1].HitSoundIDs
             args[7][2] = args[1].HitCharSndIDs
-            print("readying")
+            
+            print("[!!] arguments generated!")
             ReplicatedStorage:WaitForChild("GunKit"):WaitForChild("Remotes"):WaitForChild("VisualizeBullet"):FireServer(unpack(args))
-            print("fired")
+            print("[!!] fired!!")
 
             local args2 = {
                 [1] = {
