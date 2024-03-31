@@ -2,4 +2,4 @@
 
 gunkit model here: [gruh](https://create.roblox.com/store/asset/9532197485/Old-Version-Nonviewmodel-FE-Gun-Kit)
   or..
-[here!!]()
+[here!](https://raw.githubusercontent.com/DulledDarkness/test1/main/gunkit_model.rbxm)
