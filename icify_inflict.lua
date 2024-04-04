@@ -19,7 +19,10 @@ for i, v in pairs(Players:GetChildren()) do
 					local InflictMelee:RemoteFunction = GunScript_Server.InflictTargetMelee or GunScript_Server:WaitForChild("InflictTargetMelee")
 					
 					local THumanoid = Char:FindFirstChildWhichIsA("Humanoid")
-					local TTorso = Char.Torso or Char:WaitForChild("Torso")
+					local TTorso = Char:FindFirstChild("Torso")
+					if not TTorso then
+						TTorso = Char:WaitForChild("UpperTorso")
+					end
 					
 					local A1_1 = {RequiredModule.MeleeDamage, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier} -- Original
 					local A1_2 = {0, RequiredModule.MeleeHeadshotEnabled, RequiredModule.MeleeHeadshotDamageMultiplier}
