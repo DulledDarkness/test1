@@ -487,7 +487,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [5] = 3,
                     [6] = 1
                 },
-                [9] = {
+                [9] = { -- ProjectileHandler // line 404 > blahblahblah
                     [1] = true,
                     [2] = 1000000000,
                     [3] = true,
@@ -501,8 +501,8 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [9] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
                     [10] = true,
                     [11] = true,
-                    [12] = 500,
-                    [13] = {
+                    [12] = 500, -- image size (Scale) // beam.Width0 = Scale; beam.Width1 = Scale;
+                    [13] = { -- image id(s)
                         [1] = 13270673251
                     },
                     [14] = true,
