@@ -455,7 +455,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [3] = 5.005000500050005e+35,
                     [4] = 5.005000500050005e+35,
                     [5] = 5.005000500050005e+35,
-                    [6] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [6] = Player.Character.pistols.GunScript_Local.ExplosionEffect,
                     [7] = true
                 },
                 [7] = {
@@ -464,7 +464,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [3] = 5000,
                     [4] = Color3.new(0, 0, 0),
                     [5] = 5000,
-                    [6] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [6] = Player.Character.pistols.GunScript_Local.ExplosionEffect,
                     [7] = {
                         [1] = true,
                         [2] = 0.5,
@@ -498,7 +498,7 @@ _G["inputthing"] = UserInput.InputBegan:Connect(function(Key, Process)
                     [6] = 1.5,
                     [7] = 1,
                     [8] = true,
-                    [9] = ReplicatedStorage:WaitForChild("igp"):WaitForChild("nuke"):WaitForChild("NuclearCircleFire"),
+                    [9] = Player.Character.pistols.GunScript_Local.ExplosionEffect,
                     [10] = true,
                     [11] = true,
                     [12] = 500, -- image size (Scale) // beam.Width0 = Scale; beam.Width1 = Scale;
