@@ -26,6 +26,9 @@ local OldPos = nil
 local ItemLoopActive = false
 local ButtonLoopActive = false
 
+local ItemTableB = {}
+local ButtonTableB = {}
+
 if _G["__Input"] ~= nil then 
 	_G["__Input"]:Disconnect()
 end
@@ -59,9 +62,9 @@ local function IsEntityCloseTo(Obj)
 				if HRP then 
 					local Distance = (HRP.Position - Obj.Position).Magnitude
 					
-					if Distance >= 8 then 
+					if Distance >= 7 then 
 						return true
-					elseif Distance < 8 then
+					elseif Distance < 7 then
 						return false
 					end
 				end
@@ -95,11 +98,33 @@ local function LoopThroughItems()
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
+						elseif IsEntityCloseTo(PPart) then 
+							table.insert(ItemTableB, {[1] = PPart, [2] = Prompt})
 						end
 					end
 				end
 				
 				task.wait()
+			end
+			
+			HRP.CFrame = PlatformTele
+			
+			if #ItemTableB ~= 0 and #ItemTableB ~= nil then
+				for _, v in ipairs(ItemTableB) do 
+					if v ~= nil and typeof(v) == "table" then 
+						repeat
+							task.wait()
+						until not IsEntityCloseTo(v[1]) or v[1] == nil or v[1].Parent == nil or v[2] == nil or v[2].Parent == nil
+						
+						if v[1] ~= nil and v[2].Parent ~= nil then 
+							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
+							fireproximityprompt(Prompt)
+							
+							HRP.CFrame = PlatformTele
+							task.wait()
+						end
+					end
+				end
 			end
 			
 			HRP.CFrame = OldPos
@@ -133,11 +158,33 @@ local function LoopThroughButtons()
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
+						elseif IsEntityCloseTo(PPart) then 
+							table.insert(ButtonTableB, {PPart, Prompt})
 						end
 					end
 				end
 				
 				task.wait()
+			end
+			
+			HRP.CFrame = PlatformTele
+			
+			if #ButtonTableB ~= 0 and #ButtonTableB ~= nil then
+				for _, v in ipairs(ButtonTableB) do 
+					if v ~= nil and typeof(v) == "table" then 
+						repeat
+							task.wait()
+						until not IsEntityCloseTo(v[1]) or v[1] == nil or v[1].Parent == nil or v[2] == nil or v[2].Parent == nil
+						
+						if v[1] ~= nil and v[2].Parent ~= nil then 
+							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
+							fireproximityprompt(Prompt)
+							
+							HRP.CFrame = PlatformTele
+							task.wait()
+						end
+					end
+				end
 			end
 			
 			HRP.CFrame = OldPos
