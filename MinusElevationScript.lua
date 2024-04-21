@@ -118,7 +118,7 @@ local function LoopThroughItems()
 						until not IsEntityCloseTo(v[1]) or v[1] == nil or v[1].Parent == nil or v[2] == nil or v[2].Parent == nil
 						
 						if v[1] ~= nil and v[2].Parent ~= nil then 
-							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
+							HRP.CFrame = v[1].CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
 							fireproximityprompt(Prompt)
 							
@@ -180,7 +180,7 @@ local function LoopThroughButtons()
 						until not IsEntityCloseTo(v[1]) or v[1] == nil or v[1].Parent == nil or v[2] == nil or v[2].Parent == nil
 						
 						if v[1] ~= nil and v[2].Parent ~= nil then 
-							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
+							HRP.CFrame = v[1].CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
 							fireproximityprompt(Prompt)
 							
