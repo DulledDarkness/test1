@@ -201,11 +201,14 @@ local function LoopThroughButtons()
 end
 
 _G["__Input"] = UserInput.InputBegan:Connect(function(Key, Process)
+	if ButtonLoopActive or ItemLoopActive then
+		return
+	end
 	if Key.KeyCode == Enum.KeyCode.G and not Process then 
 		ItemLoopActive = true
 		LoopThroughItems()
 	elseif Key.KeyCode == Enum.KeyCode.H and not Process then 
 		ButtonLoopActive = true
-		LoopThroughItems()
+		LoopThroughButtons()
 	end
 end)
