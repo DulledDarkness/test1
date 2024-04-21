@@ -63,9 +63,9 @@ local function IsEntityCloseTo(Obj)
 					local Distance = (HRP.Position - Obj.Position).Magnitude
 					
 					if Distance >= 7 then 
-						return true
-					elseif Distance < 7 then
 						return false
+					elseif Distance < 7 then
+						return true
 					end
 				end
 			end
@@ -73,7 +73,7 @@ local function IsEntityCloseTo(Obj)
 			task.wait()
 		end
 	end
-	return false
+	return true
 end
 
 local function LoopThroughItems()
