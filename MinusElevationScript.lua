@@ -33,6 +33,29 @@ if _G["__Input"] ~= nil then
 	_G["__Input"]:Disconnect()
 end
 
+local function FirePromptFunc(ProximityPrompt, Amount, Skip)
+    assert(ProximityPrompt, "Argument #1 Missing or nil")
+    assert(typeof(ProximityPrompt) == "Instance" and ProximityPrompt:IsA("ProximityPrompt"), "Attempted to fire a Value that is not a ProximityPrompt")
+
+    local HoldDuration = ProximityPrompt.HoldDuration
+    if Skip then
+        ProximityPrompt.HoldDuration = 0
+    end
+
+    for i = 1, Amount or 1 do
+        ProximityPrompt:InputHoldBegin()
+        if Skip then
+            local RunService = game:GetService("RunService")
+            local Start = time()
+            repeat
+                RunService.Heartbeat:Wait(0.1)
+            until time() - Start > HoldDuration
+        end
+        ProximityPrompt:InputHoldEnd()
+    end
+    ProximityPrompt.HoldDuration = HoldDuration
+end
+
 local function FindPrompt(Obj)
 	local Found = false
 	local Prompt = nil 
@@ -95,7 +118,7 @@ local function LoopThroughItems()
 						if not IsEntityCloseTo(PPart) then
 							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
-							fireproximityprompt(Prompt)
+							FirePromptFunc(Prompt, 2, true)
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
@@ -120,7 +143,7 @@ local function LoopThroughItems()
 						if v[1] ~= nil and v[2].Parent ~= nil then 
 							HRP.CFrame = v[1].CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
-							fireproximityprompt(Prompt)
+							FirePromptFunc(Prompt, 2, true)
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
@@ -148,7 +171,7 @@ local function LoopThroughButtons()
 			OldPos = HRP.CFrame
 			
 			for i, v in ipairs(Buttons:GetChildren()) do
-				if v ~= nil and v.Parent then 
+				if v ~= nil and v.Parent ~= nil then 
 					local FPrompt, Prompt = FindPrompt(v)
 					
 					if FPrompt and Prompt ~= nil and Prompt.Parent then
@@ -157,7 +180,7 @@ local function LoopThroughButtons()
 						if not IsEntityCloseTo(PPart) then
 							HRP.CFrame = PPart.CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
-							fireproximityprompt(Prompt)
+							FirePromptFunc(Prompt, 2, true)
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
@@ -182,7 +205,7 @@ local function LoopThroughButtons()
 						if v[1] ~= nil and v[2].Parent ~= nil then 
 							HRP.CFrame = v[1].CFrame + Vector3.new(0, 3, 0)
 							task.wait(0.25)
-							fireproximityprompt(Prompt)
+							FirePromptFunc(Prompt, 2, true)
 							
 							HRP.CFrame = PlatformTele
 							task.wait()
@@ -204,6 +227,7 @@ _G["__Input"] = UserInput.InputBegan:Connect(function(Key, Process)
 	if ButtonLoopActive or ItemLoopActive then
 		return
 	end
+    
 	if Key.KeyCode == Enum.KeyCode.G and not Process then 
 		ItemLoopActive = true
 		LoopThroughItems()
